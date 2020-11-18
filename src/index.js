@@ -8,10 +8,19 @@ app.get('/', (req, res) => {
 })
 
 app.get('/users', (req, res) => {
-	var arr = [];
-  res.send(arr)
-
+        res.send(users)
 })
+
+app.post('/user', (req, res) => {
+        var obj = {id: 0};
+        users.push(obj);
+  res.send(users)
+})
+
+app.get('/user/:id', (req, res) => {
+  res.send({id: parseInt(req.params.id)})
+})
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
