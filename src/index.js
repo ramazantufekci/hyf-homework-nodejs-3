@@ -22,6 +22,7 @@ app.get('/user/:id', (req, res) => {
 })
 
 app.delete('/user/:id', (req, res) => {
+	users = [];
   res.status(202).send({id: parseInt(req.params.id)})
 })
 app.listen(port, () => {
