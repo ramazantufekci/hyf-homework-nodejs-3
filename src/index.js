@@ -18,10 +18,18 @@ app.post('/user', (req, res) => {
 })
 
 app.get('/user/:id', (req, res) => {
+	
   res.send({id: parseInt(req.params.id)})
 })
 
-
+app.delete('/user/:id', (req, res) => {
+	if(users.length<0)
+	{
+		res.status(204);
+	}
+	users = [];
+  res.status(202).send({id: parseInt(req.params.id)})
+})
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
