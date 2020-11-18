@@ -23,7 +23,7 @@ app.get('/user/:id', (req, res) => {
 
 app.delete('/user/:id', (req, res) => {
 	users = [];
-  res.status(202).send({id: parseInt(req.params.id)})
+  res.status(204).send({id: parseInt(req.params.id)})
 })
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
